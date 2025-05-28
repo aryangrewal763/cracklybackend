@@ -28,8 +28,9 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.resolve("./public")));
 const allowedOrigins = [
-  "http://localhost:5173",
-  "https://cracklyfrontend.vercel.app/"
+  "http://localhost:5173/",
+  "https://cracklyfrontend.vercel.app/",
+  "https://cracklyfrontend.onrender.com"
 ];
 
 app.use(
