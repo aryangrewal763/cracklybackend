@@ -30,7 +30,10 @@ app.use(express.static(path.resolve("./public")));
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://your-frontend.vercel.app"
+    ],
   })
 );
 
