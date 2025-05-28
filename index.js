@@ -27,12 +27,15 @@ const JoinedUser = require("./models/JoinedUser")
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.resolve("./public")));
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://your-frontend.vercel.app"
+];
+
 app.use(
   cors({
     credentials: true,
-    origin: (origin, callback) => {
-      callback(null, true); // Reflect the origin
-    },
+    origin: allowedOrigins,
   })
 );
 
